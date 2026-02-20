@@ -1,0 +1,36 @@
+@page "{id:int}"
+@model AgencyCursor.WebApp.Pages.Interpreters.DetailsModel
+@using AgencyCursor.WebApp.Helpers
+@{
+    ViewData["Title"] = "Interpreter Details";
+}
+<h1>@Model.Interpreter.FullName</h1>
+<div class="card mb-3">
+    <div class="card-body">
+        <p><strong>Email:</strong> @Model.Interpreter.Email</p>
+        <p><strong>Phone:</strong> @Model.Interpreter.Phone</p>
+        <p><strong>Language:</strong> @Model.Interpreter.Language</p>
+        <p><strong>Certification:</strong> @Model.Interpreter.Certification</p>
+        <p><strong>Availability:</strong> @Model.Interpreter.Availability</p>
+        <p><strong>Notes:</strong> @Model.Interpreter.Notes</p>
+    </div>
+</div>
+<h4>Appointments</h4>
+@if (Model.Interpreter.Appointments.Any())
+{
+    <table class="table table-sm">
+        <thead><tr><th>Date</th><th>Status</th></tr></thead>
+        <tbody>
+            @foreach (var a in Model.Interpreter.Appointments)
+            {
+                <tr>
+                    <td>@a.AppointmentDate.ToString("MM/dd/yyyy")</td>
+                    <td><span class="badge @StatusHelper.GetBadgeClass(a.Status)">@a.Status</span></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else { <p class="text-muted">No appointments.</p> }
+<a asp-page="Edit" asp-route-id="@Model.Interpreter.Id" class="btn btn-warning me-2">Edit</a>
+<a asp-page="Index" class="btn btn-outline-secondary">Back</a>

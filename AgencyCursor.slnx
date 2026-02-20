@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="AgencyCursor.Tests/AgencyCursor.Tests.csproj" />
+  <Project Path="AgencyCursor.WebApp/AgencyCursor.WebApp.csproj" />
+</Solution>

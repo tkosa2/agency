@@ -1,0 +1,51 @@
+@page
+@model AgencyCursor.WebApp.Pages.Appointments.CreateModel
+@{
+    ViewData["Title"] = "New Appointment";
+}
+<h1>New Appointment</h1>
+<form method="post">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="mb-3">
+        <label class="form-label">Request</label>
+        <select asp-for="Appointment.RequestId" asp-items="Model.RequestList" class="form-select">
+            <option value="">-- Select Request --</option>
+        </select>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Interpreter</label>
+        <select asp-for="Appointment.InterpreterId" asp-items="Model.InterpreterList" class="form-select">
+            <option value="">-- Select Interpreter --</option>
+        </select>
+    </div>
+    <div class="row">
+        <div class="col-md-4 mb-3">
+            <label class="form-label">Date</label>
+            <input asp-for="Appointment.AppointmentDate" class="form-control" type="date" />
+        </div>
+        <div class="col-md-4 mb-3">
+            <label class="form-label">Start Time</label>
+            <input asp-for="Appointment.StartTime" class="form-control" type="time" />
+        </div>
+        <div class="col-md-4 mb-3">
+            <label class="form-label">End Time</label>
+            <input asp-for="Appointment.EndTime" class="form-control" type="time" />
+        </div>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Location Details</label>
+        <input asp-for="Appointment.LocationDetails" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Status</label>
+        <select asp-for="Appointment.Status" class="form-select">
+            <option>Assigned</option><option>Confirmed</option><option>Completed</option><option>Cancelled&lt;48h</option><option>Cancelled&gt;48h</option>
+        </select>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Notes</label>
+        <textarea asp-for="Appointment.Notes" class="form-control" rows="3"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Create</button>
+    <a asp-page="Index" class="btn btn-outline-secondary ms-2">Cancel</a>
+</form>

@@ -1,0 +1,35 @@
+@page
+@model AgencyCursor.WebApp.Pages.Invoices.IndexModel
+@using AgencyCursor.WebApp.Helpers
+@{
+    ViewData["Title"] = "Invoices";
+}
+<div class="d-flex justify-content-between align-items-center mb-3">
+    <h1>Invoices</h1>
+    <a asp-page="Create" class="btn btn-primary">New Invoice</a>
+</div>
+<table class="table table-striped table-hover">
+    <thead>
+        <tr>
+            <th>#</th><th>Appointment</th><th>Amount</th><th>Status</th><th>Created</th><th>Paid</th><th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var inv in Model.Invoices)
+        {
+            <tr>
+                <td>@inv.Id</td>
+                <td>#@inv.AppointmentId</td>
+                <td>$@inv.Amount.ToString("F2")</td>
+                <td><span class="badge @StatusHelper.GetBadgeClass(inv.Status)">@inv.Status</span></td>
+                <td>@inv.CreatedDate.ToString("MM/dd/yyyy")</td>
+                <td>@inv.PaidDate?.ToString("MM/dd/yyyy")</td>
+                <td>
+                    <a asp-page="Details" asp-route-id="@inv.Id" class="btn btn-sm btn-info">Details</a>
+                    <a asp-page="Edit" asp-route-id="@inv.Id" class="btn btn-sm btn-warning">Edit</a>
+                    <a asp-page="Delete" asp-route-id="@inv.Id" class="btn btn-sm btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

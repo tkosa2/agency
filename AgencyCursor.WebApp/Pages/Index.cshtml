@@ -1,0 +1,65 @@
+@page
+@model AgencyCursor.WebApp.Pages.IndexModel
+@{
+    ViewData["Title"] = "Dashboard";
+}
+<h1>Dashboard</h1>
+<div class="row mt-4">
+    <div class="col-md-2 mb-3">
+        <div class="card text-center">
+            <div class="card-body">
+                <h5 class="card-title">Requestors</h5>
+                <p class="card-text display-6">@Model.RequestorCount</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-2 mb-3">
+        <div class="card text-center">
+            <div class="card-body">
+                <h5 class="card-title">Interpreters</h5>
+                <p class="card-text display-6">@Model.InterpreterCount</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-2 mb-3">
+        <div class="card text-center border-warning">
+            <div class="card-body">
+                <h5 class="card-title">New Requests</h5>
+                <p class="card-text display-6 text-warning">@Model.NewRequestCount</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-2 mb-3">
+        <div class="card text-center">
+            <div class="card-body">
+                <h5 class="card-title">All Requests</h5>
+                <p class="card-text display-6">@Model.RequestCount</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-2 mb-3">
+        <div class="card text-center">
+            <div class="card-body">
+                <h5 class="card-title">Appointments</h5>
+                <p class="card-text display-6">@Model.AppointmentCount</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-2 mb-3">
+        <div class="card text-center">
+            <div class="card-body">
+                <h5 class="card-title">Invoices</h5>
+                <p class="card-text display-6">@Model.InvoiceCount</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row mt-3">
+    <div class="col">
+        <a asp-page="/Request/Index" class="btn btn-primary me-2">Submit Request</a>
+        <a asp-page="/Requests/Index" class="btn btn-outline-secondary me-2">View Requests</a>
+        <a asp-page="/Interpreters/Index" class="btn btn-outline-secondary me-2">Interpreters</a>
+        <a asp-page="/Appointments/Index" class="btn btn-outline-secondary me-2">Appointments</a>
+        <a asp-page="/Invoices/Index" class="btn btn-outline-secondary">Invoices</a>
+    </div>
+</div>

@@ -1,0 +1,151 @@
+is_global = true
+build_property.TargetFramework = net8.0
+build_property.TargetFrameworkIdentifier = .NETCoreApp
+build_property.TargetFrameworkVersion = v8.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = AgencyCursor.WebApp
+build_property.RootNamespace = AgencyCursor.WebApp
+build_property.ProjectDir = /home/runner/work/agency/agency/AgencyCursor.WebApp/
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 8.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = /home/runner/work/agency/agency/AgencyCursor.WebApp
+build_property._RazorSourceGeneratorDebug = 
+build_property.EffectiveAnalysisLevelStyle = 8.0
+build_property.EnableCodeStyleSeverity = 
+
+[/home/runner/work/agency/agency/AgencyCursor.WebApp/Pages/Appointments/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQXBwb2ludG1lbnRzL0NyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/runner/work/agency/agency/AgencyCursor.WebApp/Pages/Appointments/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQXBwb2ludG1lbnRzL0RlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/runner/work/agency/agency/AgencyCursor.WebApp/Pages/Appointments/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQXBwb2ludG1lbnRzL0RldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/runner/work/agency/agency/AgencyCursor.WebApp/Pages/Appointments/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQXBwb2ludG1lbnRzL0VkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/runner/work/agency/agency/AgencyCursor.WebApp/Pages/Appointments/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQXBwb2ludG1lbnRzL0luZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/runner/work/agency/agency/AgencyCursor.WebApp/Pages/EmailLogs/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvRW1haWxMb2dzL0luZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/runner/work/agency/agency/AgencyCursor.WebApp/Pages/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvRXJyb3IuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/runner/work/agency/agency/AgencyCursor.WebApp/Pages/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/runner/work/agency/agency/AgencyCursor.WebApp/Pages/Interpreters/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvSW50ZXJwcmV0ZXJzL0NyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/runner/work/agency/agency/AgencyCursor.WebApp/Pages/Interpreters/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvSW50ZXJwcmV0ZXJzL0RlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/runner/work/agency/agency/AgencyCursor.WebApp/Pages/Interpreters/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvSW50ZXJwcmV0ZXJzL0RldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/runner/work/agency/agency/AgencyCursor.WebApp/Pages/Interpreters/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvSW50ZXJwcmV0ZXJzL0VkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/runner/work/agency/agency/AgencyCursor.WebApp/Pages/Interpreters/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvSW50ZXJwcmV0ZXJzL0luZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/runner/work/agency/agency/AgencyCursor.WebApp/Pages/Interpreters/RespondToRequest.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvSW50ZXJwcmV0ZXJzL1Jlc3BvbmRUb1JlcXVlc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/runner/work/agency/agency/AgencyCursor.WebApp/Pages/Interpreters/ThankYou.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvSW50ZXJwcmV0ZXJzL1RoYW5rWW91LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/runner/work/agency/agency/AgencyCursor.WebApp/Pages/Invoices/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvSW52b2ljZXMvQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/runner/work/agency/agency/AgencyCursor.WebApp/Pages/Invoices/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvSW52b2ljZXMvRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/runner/work/agency/agency/AgencyCursor.WebApp/Pages/Invoices/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvSW52b2ljZXMvRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/runner/work/agency/agency/AgencyCursor.WebApp/Pages/Invoices/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvSW52b2ljZXMvRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/runner/work/agency/agency/AgencyCursor.WebApp/Pages/Invoices/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvSW52b2ljZXMvSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/runner/work/agency/agency/AgencyCursor.WebApp/Pages/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvUHJpdmFjeS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/runner/work/agency/agency/AgencyCursor.WebApp/Pages/Request/Confirmation.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvUmVxdWVzdC9Db25maXJtYXRpb24uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/runner/work/agency/agency/AgencyCursor.WebApp/Pages/Request/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvUmVxdWVzdC9JbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/runner/work/agency/agency/AgencyCursor.WebApp/Pages/Requests/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvUmVxdWVzdHMvQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/runner/work/agency/agency/AgencyCursor.WebApp/Pages/Requests/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvUmVxdWVzdHMvRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/runner/work/agency/agency/AgencyCursor.WebApp/Pages/Requests/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvUmVxdWVzdHMvRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/runner/work/agency/agency/AgencyCursor.WebApp/Pages/Requests/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvUmVxdWVzdHMvRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/runner/work/agency/agency/AgencyCursor.WebApp/Pages/Requests/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvUmVxdWVzdHMvSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/runner/work/agency/agency/AgencyCursor.WebApp/Pages/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvU2hhcmVkL19WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/runner/work/agency/agency/AgencyCursor.WebApp/Pages/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/runner/work/agency/agency/AgencyCursor.WebApp/Pages/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/runner/work/agency/agency/AgencyCursor.WebApp/Pages/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvU2hhcmVkL19MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-rj9ejddyk8
