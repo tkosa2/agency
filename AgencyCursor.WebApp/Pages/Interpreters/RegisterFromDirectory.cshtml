@@ -1,0 +1,81 @@
+@page
+@model AgencyCursor.WebApp.Pages.Interpreters.RegisterFromDirectoryModel
+@{
+    ViewData["Title"] = "Register Interpreter from Directory";
+}
+<h1>Register Interpreter</h1>
+<p class="text-muted">
+    Pre-filled from the RID interpreter directory. Please complete any missing fields before saving.
+</p>
+
+@if (Model.DirectoryEntry != null)
+{
+    <div class="alert alert-info mb-3">
+        <strong>Directory Entry:</strong> @Model.DirectoryEntry.FullName
+        — @Model.DirectoryEntry.City, @Model.DirectoryEntry.State @Model.DirectoryEntry.ZipCode
+        @if (Model.DirectoryEntry.Certificates.Count > 0)
+        {
+            <span>| Certificates: @Model.DirectoryEntry.CertificatesSummary</span>
+        }
+        @if (Model.DirectoryEntry.Specialties.Count > 0)
+        {
+            <span>| Specialties: @Model.DirectoryEntry.SpecialtiesSummary</span>
+        }
+    </div>
+}
+
+<form method="post">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="row">
+        <div class="col-md-6 mb-3">
+            <label class="form-label">First Name *</label>
+            <input asp-for="Interpreter.FirstName" class="form-control" />
+        </div>
+        <div class="col-md-6 mb-3">
+            <label class="form-label">Last Name *</label>
+            <input asp-for="Interpreter.LastName" class="form-control" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 mb-3">
+            <label class="form-label">Email *</label>
+            <input asp-for="Interpreter.Email" class="form-control" type="email" />
+        </div>
+        <div class="col-md-6 mb-3">
+            <label class="form-label">Phone *</label>
+            <input asp-for="Interpreter.Phone" class="form-control" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 mb-3">
+            <label class="form-label">Language *</label>
+            <input asp-for="Interpreter.Language" class="form-control" />
+        </div>
+        <div class="col-md-6 mb-3">
+            <label class="form-label">Certification</label>
+            <input asp-for="Interpreter.Certification" class="form-control" />
+        </div>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Availability</label>
+        <input asp-for="Interpreter.Availability" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Notes</label>
+        <textarea asp-for="Interpreter.Notes" class="form-control" rows="3"></textarea>
+    </div>
+    <button type="submit" class="btn btn-success">Register Interpreter</button>
+    <a asp-page="SearchDirectory"
+       asp-route-firstName="@Model.SearchFirstName"
+       asp-route-lastName="@Model.SearchLastName"
+       asp-route-certificate="@Model.SearchCertificate"
+       asp-route-specialty="@Model.SearchSpecialty"
+       asp-route-city="@Model.SearchCity"
+       asp-route-state="@Model.SearchState"
+       asp-route-zip="@Model.SearchZip"
+       class="btn btn-outline-secondary ms-2">Back to Search Results</a>
+</form>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

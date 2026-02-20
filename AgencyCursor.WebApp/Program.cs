@@ -9,6 +9,7 @@ builder.Services.AddDbContext<AgencyDbContext>(options =>
     options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
 builder.Services.Configure<SmtpSettings>(builder.Configuration.GetSection("SmtpSettings"));
 builder.Services.AddScoped<IEmailService, SmtpEmailService>();
+builder.Services.AddScoped<IDirectorySearchService, DirectorySearchService>();
 builder.Services.AddHttpContextAccessor();
 
 var app = builder.Build();
