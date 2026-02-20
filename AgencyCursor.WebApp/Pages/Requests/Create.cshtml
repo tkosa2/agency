@@ -1,0 +1,63 @@
+@page
+@model AgencyCursor.WebApp.Pages.Requests.CreateModel
+@{
+    ViewData["Title"] = "Create Request";
+}
+<h1>Create Request</h1>
+<form method="post">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="mb-3">
+        <label class="form-label">Requestor</label>
+        <select asp-for="Request.RequestorId" asp-items="Model.RequestorList" class="form-select">
+            <option value="">-- Select Requestor --</option>
+        </select>
+    </div>
+    <div class="row">
+        <div class="col-md-4 mb-3">
+            <label class="form-label">Date</label>
+            <input asp-for="Request.AppointmentDate" class="form-control" type="date" />
+        </div>
+        <div class="col-md-4 mb-3">
+            <label class="form-label">Start Time</label>
+            <input asp-for="Request.StartTime" class="form-control" type="time" />
+        </div>
+        <div class="col-md-4 mb-3">
+            <label class="form-label">End Time</label>
+            <input asp-for="Request.EndTime" class="form-control" type="time" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 mb-3">
+            <label class="form-label">Service Type</label>
+            <select asp-for="Request.ServiceType" class="form-select">
+                <option value="">-- Select --</option>
+                <option>Medical</option><option>Legal</option><option>Educational</option><option>Other</option>
+            </select>
+        </div>
+        <div class="col-md-6 mb-3">
+            <label class="form-label">Individual Type</label>
+            <select asp-for="Request.IndividualType" class="form-select">
+                <option value="">-- Select --</option>
+                <option>Deaf</option><option>Deaf-Blind</option>
+            </select>
+        </div>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Mode</label>
+        <select asp-for="Request.Mode" class="form-select">
+            <option value="">-- Select --</option>
+            <option>In-Person</option><option>Virtual</option>
+        </select>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Status</label>
+        <select asp-for="Request.Status" class="form-select">
+            @foreach (var s in new[] { "New Request","Reviewed","Approved","Broadcasted","Assigned","Confirmed","Completed","Cancelled<48h","Cancelled>48h" })
+            {
+                <option>@s</option>
+            }
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Create</button>
+    <a asp-page="Index" class="btn btn-outline-secondary ms-2">Cancel</a>
+</form>

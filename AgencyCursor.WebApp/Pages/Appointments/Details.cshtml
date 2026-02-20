@@ -1,0 +1,38 @@
+@page "{id:int}"
+@model AgencyCursor.WebApp.Pages.Appointments.DetailsModel
+@using AgencyCursor.WebApp.Helpers
+@{
+    ViewData["Title"] = "Appointment Details";
+}
+<h1>Appointment #@Model.Appointment.Id</h1>
+<div class="card mb-3">
+    <div class="card-body">
+        <p><strong>Date:</strong> @Model.Appointment.AppointmentDate.ToString("MM/dd/yyyy")</p>
+        <p><strong>Time:</strong> @Model.Appointment.StartTime - @Model.Appointment.EndTime</p>
+        <p><strong>Interpreter:</strong> @Model.Appointment.Interpreter.FullName</p>
+        <p><strong>Request:</strong> #@Model.Appointment.RequestId</p>
+        <p><strong>Status:</strong> <span class="badge @StatusHelper.GetBadgeClass(Model.Appointment.Status)">@Model.Appointment.Status</span></p>
+        <p><strong>Location:</strong> @Model.Appointment.LocationDetails</p>
+        <p><strong>Notes:</strong> @Model.Appointment.Notes</p>
+    </div>
+</div>
+<h4>Invoices</h4>
+@if (Model.Appointment.Invoices.Any())
+{
+    <table class="table table-sm">
+        <thead><tr><th>Amount</th><th>Status</th><th>Created</th></tr></thead>
+        <tbody>
+            @foreach (var inv in Model.Appointment.Invoices)
+            {
+                <tr>
+                    <td>$@inv.Amount.ToString("F2")</td>
+                    <td><span class="badge @StatusHelper.GetBadgeClass(inv.Status)">@inv.Status</span></td>
+                    <td>@inv.CreatedDate.ToString("MM/dd/yyyy")</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else { <p class="text-muted">No invoices yet.</p> }
+<a asp-page="Edit" asp-route-id="@Model.Appointment.Id" class="btn btn-warning me-2">Edit</a>
+<a asp-page="Index" class="btn btn-outline-secondary">Back</a>

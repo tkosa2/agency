@@ -1,0 +1,50 @@
+@page "{id:int}"
+@model AgencyCursor.WebApp.Pages.Interpreters.EditModel
+@{
+    ViewData["Title"] = "Edit Interpreter";
+}
+<h1>Edit Interpreter</h1>
+<form method="post">
+    <input type="hidden" asp-for="Interpreter.Id" />
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="row">
+        <div class="col-md-6 mb-3">
+            <label class="form-label">First Name *</label>
+            <input asp-for="Interpreter.FirstName" class="form-control" />
+        </div>
+        <div class="col-md-6 mb-3">
+            <label class="form-label">Last Name *</label>
+            <input asp-for="Interpreter.LastName" class="form-control" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 mb-3">
+            <label class="form-label">Email *</label>
+            <input asp-for="Interpreter.Email" class="form-control" />
+        </div>
+        <div class="col-md-6 mb-3">
+            <label class="form-label">Phone *</label>
+            <input asp-for="Interpreter.Phone" class="form-control" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 mb-3">
+            <label class="form-label">Language *</label>
+            <input asp-for="Interpreter.Language" class="form-control" />
+        </div>
+        <div class="col-md-6 mb-3">
+            <label class="form-label">Certification</label>
+            <input asp-for="Interpreter.Certification" class="form-control" />
+        </div>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Availability</label>
+        <input asp-for="Interpreter.Availability" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Notes</label>
+        <textarea asp-for="Interpreter.Notes" class="form-control" rows="3"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Save</button>
+    <a asp-page="Index" class="btn btn-outline-secondary ms-2">Cancel</a>
+</form>

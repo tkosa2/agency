@@ -1,0 +1,39 @@
+@page "{requestId:int}/{interpreterId:int}"
+@model AgencyCursor.WebApp.Pages.Interpreters.RespondToRequestModel
+@using AgencyCursor.WebApp.Helpers
+@{
+    ViewData["Title"] = "Respond to Request";
+}
+<div class="container mt-5" style="max-width:600px">
+    <div class="card">
+        <div class="card-header"><h4>Respond to Interpretation Request #@Model.Request.Id</h4></div>
+        <div class="card-body">
+            <p><strong>Date:</strong> @Model.Request.AppointmentDate.ToString("MM/dd/yyyy")</p>
+            <p><strong>Time:</strong> @Model.Request.StartTime - @Model.Request.EndTime</p>
+            <p><strong>Service Type:</strong> @Model.Request.ServiceType</p>
+            <p><strong>Mode:</strong> @Model.Request.Mode</p>
+            @if (Model.ExistingResponse != null)
+            {
+                <div class="alert alert-info">
+                    You have already responded: <strong>@Model.ExistingResponse.ResponseStatus</strong>
+                </div>
+            }
+            <form method="post">
+                <div class="mb-3">
+                    <label class="form-label">Your Response *</label>
+                    <select asp-for="ResponseStatus" class="form-select">
+                        <option value="">-- Select --</option>
+                        <option value="Yes">Yes - I am available</option>
+                        <option value="No">No - I am not available</option>
+                        <option value="Maybe">Maybe - I need more info</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Notes</label>
+                    <textarea asp-for="Notes" class="form-control" rows="3"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit Response</button>
+            </form>
+        </div>
+    </div>
+</div>

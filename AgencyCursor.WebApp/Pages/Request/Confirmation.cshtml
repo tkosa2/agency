@@ -1,0 +1,14 @@
+@page "{id:int}"
+@model AgencyCursor.WebApp.Pages.Request.ConfirmationModel
+@{
+    ViewData["Title"] = "Request Submitted";
+}
+<div class="text-center mt-5">
+    <div class="alert alert-success">
+        <h2>Thank you! Your request has been submitted.</h2>
+        <p>Request ID: <strong>#@Model.RequestId</strong></p>
+        <p>We will contact you shortly to confirm your appointment.</p>
+    </div>
+    <a asp-page="/Request/Index" class="btn btn-primary me-2">Submit Another Request</a>
+    <a asp-page="/Index" class="btn btn-outline-secondary">Home</a>
+</div>

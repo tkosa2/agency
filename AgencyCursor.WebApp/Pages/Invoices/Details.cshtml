@@ -1,0 +1,19 @@
+@page "{id:int}"
+@model AgencyCursor.WebApp.Pages.Invoices.DetailsModel
+@using AgencyCursor.WebApp.Helpers
+@{
+    ViewData["Title"] = "Invoice Details";
+}
+<h1>Invoice #@Model.Invoice.Id</h1>
+<div class="card mb-3">
+    <div class="card-body">
+        <p><strong>Appointment:</strong> #@Model.Invoice.AppointmentId</p>
+        <p><strong>Amount:</strong> $@Model.Invoice.Amount.ToString("F2")</p>
+        <p><strong>Status:</strong> <span class="badge @StatusHelper.GetBadgeClass(Model.Invoice.Status)">@Model.Invoice.Status</span></p>
+        <p><strong>Created:</strong> @Model.Invoice.CreatedDate.ToString("MM/dd/yyyy")</p>
+        <p><strong>Paid:</strong> @Model.Invoice.PaidDate?.ToString("MM/dd/yyyy")</p>
+        <p><strong>Notes:</strong> @Model.Invoice.Notes</p>
+    </div>
+</div>
+<a asp-page="Edit" asp-route-id="@Model.Invoice.Id" class="btn btn-warning me-2">Edit</a>
+<a asp-page="Index" class="btn btn-outline-secondary">Back</a>

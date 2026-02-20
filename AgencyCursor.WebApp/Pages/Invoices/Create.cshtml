@@ -1,0 +1,31 @@
+@page
+@model AgencyCursor.WebApp.Pages.Invoices.CreateModel
+@{
+    ViewData["Title"] = "New Invoice";
+}
+<h1>New Invoice</h1>
+<form method="post">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="mb-3">
+        <label class="form-label">Appointment</label>
+        <select asp-for="Invoice.AppointmentId" asp-items="Model.AppointmentList" class="form-select">
+            <option value="">-- Select --</option>
+        </select>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Amount</label>
+        <input asp-for="Invoice.Amount" class="form-control" type="number" step="0.01" />
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Status</label>
+        <select asp-for="Invoice.Status" class="form-select">
+            <option>Pending</option><option>Paid</option>
+        </select>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Notes</label>
+        <textarea asp-for="Invoice.Notes" class="form-control" rows="3"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Create</button>
+    <a asp-page="Index" class="btn btn-outline-secondary ms-2">Cancel</a>
+</form>

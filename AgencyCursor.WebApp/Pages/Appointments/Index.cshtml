@@ -1,0 +1,34 @@
+@page
+@model AgencyCursor.WebApp.Pages.Appointments.IndexModel
+@using AgencyCursor.WebApp.Helpers
+@{
+    ViewData["Title"] = "Appointments";
+}
+<div class="d-flex justify-content-between align-items-center mb-3">
+    <h1>Appointments</h1>
+    <a asp-page="Create" class="btn btn-primary">New Appointment</a>
+</div>
+<table class="table table-striped table-hover">
+    <thead>
+        <tr>
+            <th>#</th><th>Date</th><th>Interpreter</th><th>Request</th><th>Status</th><th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var a in Model.Appointments)
+        {
+            <tr>
+                <td>@a.Id</td>
+                <td>@a.AppointmentDate.ToString("MM/dd/yyyy")</td>
+                <td>@a.Interpreter.FullName</td>
+                <td>#@a.RequestId</td>
+                <td><span class="badge @StatusHelper.GetBadgeClass(a.Status)">@a.Status</span></td>
+                <td>
+                    <a asp-page="Details" asp-route-id="@a.Id" class="btn btn-sm btn-info">Details</a>
+                    <a asp-page="Edit" asp-route-id="@a.Id" class="btn btn-sm btn-warning">Edit</a>
+                    <a asp-page="Delete" asp-route-id="@a.Id" class="btn btn-sm btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

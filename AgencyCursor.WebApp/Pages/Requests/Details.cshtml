@@ -1,0 +1,105 @@
+@page "{id:int}"
+@model AgencyCursor.WebApp.Pages.Requests.DetailsModel
+@using AgencyCursor.WebApp.Helpers
+@{
+    ViewData["Title"] = $"Request #{Model.Request.Id}";
+}
+<div class="d-flex justify-content-between align-items-center mb-3">
+    <h1>Request #@Model.Request.Id</h1>
+    <span class="badge fs-5 @StatusHelper.GetBadgeClass(Model.Request.Status)">@Model.Request.Status</span>
+</div>
+<div class="row">
+    <div class="col-md-6">
+        <div class="card mb-3">
+            <div class="card-header">Requestor</div>
+            <div class="card-body">
+                <p><strong>Name:</strong> @Model.Request.Requestor.FullName</p>
+                <p><strong>Email:</strong> @Model.Request.Requestor.Email</p>
+                <p><strong>Phone:</strong> @Model.Request.Requestor.Phone</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="card mb-3">
+            <div class="card-header">Appointment</div>
+            <div class="card-body">
+                <p><strong>Date:</strong> @Model.Request.AppointmentDate.ToString("MM/dd/yyyy")</p>
+                <p><strong>Time:</strong> @Model.Request.StartTime - @Model.Request.EndTime</p>
+                <p><strong>Service:</strong> @Model.Request.ServiceType @Model.Request.ServiceTypeOther</p>
+                <p><strong>Mode:</strong> @Model.Request.Mode</p>
+                @if (Model.Request.Mode == "In-Person")
+                {
+                    <p><strong>Address:</strong> @Model.Request.Address, @Model.Request.City, @Model.Request.State @Model.Request.ZipCode</p>
+                }
+                @if (Model.Request.Mode == "Virtual")
+                {
+                    <p><strong>Link:</strong> @Model.Request.VirtualMeetingLink</p>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+<div class="mb-3">
+    <strong>Status:</strong>
+    <form method="post" asp-page-handler="UpdateStatus" class="d-inline">
+        <input type="hidden" name="id" value="@Model.Request.Id" />
+        <select name="status" class="form-select d-inline w-auto">
+            @foreach (var s in new[] { "New Request","Reviewed","Approved","Broadcasted","Assigned","Confirmed","Completed","Cancelled<48h","Cancelled>48h" })
+            {
+                <option value="@s" selected="@(Model.Request.Status == s)">@s</option>
+            }
+        </select>
+        <button type="submit" class="btn btn-sm btn-primary ms-2">Update</button>
+    </form>
+</div>
+<div class="mb-3">
+    <form method="post" asp-page-handler="Broadcast">
+        <input type="hidden" name="id" value="@Model.Request.Id" />
+        <button type="submit" class="btn btn-warning">Broadcast to Interpreters</button>
+    </form>
+</div>
+
+<h4>Interpreter Responses</h4>
+@if (Model.Request.Responses.Any())
+{
+    <table class="table table-sm">
+        <thead><tr><th>Interpreter</th><th>Response</th><th>Notes</th><th>Time</th></tr></thead>
+        <tbody>
+            @foreach (var resp in Model.Request.Responses)
+            {
+                <tr>
+                    <td>@resp.Interpreter.FullName</td>
+                    <td><span class="badge @StatusHelper.GetBadgeClass(resp.ResponseStatus)">@resp.ResponseStatus</span></td>
+                    <td>@resp.Notes</td>
+                    <td>@resp.RespondedAt.ToString("MM/dd/yyyy HH:mm")</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else { <p class="text-muted">No responses yet.</p> }
+
+<h4 class="mt-3">Email Logs</h4>
+@if (Model.Request.EmailLogs.Any())
+{
+    <table class="table table-sm">
+        <thead><tr><th>Interpreter</th><th>Sent At</th><th>Status</th><th>Error</th></tr></thead>
+        <tbody>
+            @foreach (var log in Model.Request.EmailLogs)
+            {
+                <tr>
+                    <td>@log.Interpreter.FullName</td>
+                    <td>@log.SentAt.ToString("MM/dd/yyyy HH:mm")</td>
+                    <td><span class="badge @StatusHelper.GetBadgeClass(log.Status)">@log.Status</span></td>
+                    <td>@log.ErrorMessage</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else { <p class="text-muted">No emails sent yet.</p> }
+
+<div class="mt-3">
+    <a asp-page="Edit" asp-route-id="@Model.Request.Id" class="btn btn-warning me-2">Edit</a>
+    <a asp-page="Index" class="btn btn-outline-secondary">Back</a>
+</div>
