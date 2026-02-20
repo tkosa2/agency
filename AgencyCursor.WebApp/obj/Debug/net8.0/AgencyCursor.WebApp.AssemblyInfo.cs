@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AgencyCursor.WebApp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6df14cbe7274e5f24a681d5c7fb845330ed25b93")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+573fd869c3442661e5e8df67311ce3187b280b53")]
 [assembly: System.Reflection.AssemblyProductAttribute("AgencyCursor.WebApp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AgencyCursor.WebApp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
