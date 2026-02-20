@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations;
+using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
 
 namespace AgencyCursor.WebApp.Models;
 
@@ -6,7 +7,7 @@ public class Request
 {
     public int Id { get; set; }
     public int RequestorId { get; set; }
-    public Requestor Requestor { get; set; } = null!;
+    [ValidateNever] public Requestor Requestor { get; set; } = null!;
     public string? RequestName { get; set; }
     public int NumberOfDeafIndividuals { get; set; }
     [Required] public string IndividualType { get; set; } = string.Empty;
